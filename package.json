@@ -1,0 +1,10 @@
+{
+  "name": "robjonblog",
+  "version": "1.0.0",
+  "description": "## Description This is a 2 model blog app built Mongo/Mongoose. Authors have many Posts.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.7.0"
+  }
+}
