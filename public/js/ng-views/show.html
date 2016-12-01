@@ -1,0 +1,11 @@
+<h1>Show Page</h1>
+<h1>{{vm.post.title}}</h1>
+<h3>{{vm.post.body}}</h3>
+
+<div>
+  <input type="text" ng-model="vm.post.title"/></br>
+  <textarea type="text" style="width: 300px; height: 200px;" ng-model="vm.post.body"/></textarea><br>
+  <button data-ng-click="vm.update()">Edit Platform</button>
+</div>
+<br>
+<button data-ng-click="vm.destroy()">Delete Post</button>

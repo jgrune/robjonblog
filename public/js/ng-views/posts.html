@@ -1,0 +1,13 @@
+<h2>welcome to the posts page</h2>
+
+<div data-ng-repeat="post in vm.posts">
+  <h2><a data-ui-sref="show({_id: post._id})">{{post.title}}</a></h2>
+</div>
+
+<h2>New Post</h2>
+
+<form data-ng-submit="vm.create()">
+    <input type="text" ng-model="vm.newPost.title" placeholder="title"/></br>
+    <textarea type="text" placeholder="body text" style="width: 300px; height: 200px;" ng-model="vm.newPost.body"/></textarea><br>
+    <button type="submit">Add New Post</button>
+</form>

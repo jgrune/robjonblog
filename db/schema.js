@@ -18,8 +18,15 @@ var PostSchema = new Schema({
   body: String
 })
 
+var AuthorSchema = new Schema({
+  name: String,
+  posts: [{type: Schema.ObjectId, ref: "PostModel"}]
+})
+
 var PostModel = mongoose.model("Post", PostSchema);
+var AuthorModel = mongoose.model("Author", AuthorSchema)
 
 module.exports = {
-  PostModel
+  PostModel,
+  AuthorModel
 };
