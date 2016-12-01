@@ -13,14 +13,14 @@ db.once('open', function(){
 
 var Schema = mongoose.Schema
 
-var PostSchema = new Schema({
-  title: String,
-  body: String
-})
-
 var AuthorSchema = new Schema({
   name: String,
-  posts: [{type: Schema.ObjectId, ref: "PostModel"}]
+})
+
+var PostSchema = new Schema({
+  author: [AuthorSchema],
+  title: String,
+  body: String
 })
 
 var PostModel = mongoose.model("Post", PostSchema);

@@ -10,13 +10,16 @@ app.controller("showController", ["$state", "Post", "$stateParams", showControll
 
 function RouterFunction($stateProvider){
   $stateProvider
-    .state("welcome", {
-      url: "/",
-      templateUrl: "/assets/js/ng-views/welcome.html"
-    })
     .state("index", {
       url: "/posts",
       templateUrl: "/assets/js/ng-views/posts.html",
+      controller: "indexController",
+      controllerAs: "vm"
+    })
+    .state("showAll", {
+      url: "/posts/all",
+      templateUrl:
+      "/assets/js/ng-views/showall.html",
       controller: "indexController",
       controllerAs: "vm"
     })
@@ -40,6 +43,8 @@ function indexControllerFunction($state, Post){
 
 function showControllerFunction($state, Post, $stateParams) {
   this.post = Post.get({_id: $stateParams._id})
+  console.log("test")
+  console.log(this.post)
   this.update = function () {
     this.post.$update({_id: $stateParams._id})
     $state.go("index")

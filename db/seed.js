@@ -39,6 +39,12 @@ var author3 = new AuthorModel({
   posts: [post4]
 })
 
+post1.author = author1
+post2.author = author2
+post3.author = author3
+post4.author = author3
+post5.author = author3
+
 var authors = [author1, author2, author3]
 var posts = [post1, post2, post3, post4, post5]
 
